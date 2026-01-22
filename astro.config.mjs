@@ -19,7 +19,6 @@ export default defineConfig({
 			],
 			components: {
 				ThemeSelect: './src/components/EmptyThemeSelect.astro',
-				Head: './src/components/Head.astro',
 			},
 			sidebar: [
 				{
