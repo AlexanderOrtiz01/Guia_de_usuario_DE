@@ -1,0 +1,19 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/Head.astro';
+import { ViewTransitions } from 'astro:transitions';
+---
+
+<Default {...Astro.props}><slot /></Default>
+<ViewTransitions />
+<script is:inline>
+	// Forzar tema light permanentemente
+	document.documentElement.dataset.theme = 'light';
+	// Prevenir cambios de tema
+	const observer = new MutationObserver(() => {
+		if (document.documentElement.dataset.theme !== 'light') {
+			document.documentElement.dataset.theme = 'light';
+		}
+	});
+	observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+</script>
