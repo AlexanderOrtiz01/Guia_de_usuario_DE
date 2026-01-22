@@ -17,6 +17,14 @@ export default defineConfig({
 			customCss: [
 				'./src/styles/custom.css',
 			],
+			head: [
+				{
+					tag: 'script',
+					attrs: {
+						src: '/force-light-theme.js',
+					},
+				},
+			],
 			components: {
 				ThemeSelect: './src/components/EmptyThemeSelect.astro',
 			},
