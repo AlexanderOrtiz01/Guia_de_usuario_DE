@@ -16,4 +16,12 @@ import { ViewTransitions } from 'astro:transitions';
 		}
 	});
 	observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+	
+	// Fix para el componente de búsqueda después de View Transitions
+	document.addEventListener('astro:after-swap', () => {
+		// Reinicializar componentes de Starlight
+		if (window.StarlightSearch) {
+			window.StarlightSearch.init?.();
+		}
+	});
 </script>
