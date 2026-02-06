@@ -1,0 +1,44 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/Sidebar.astro';
+
+const currentPath = Astro.url.pathname;
+
+// Crear sidebar filtrado según la ruta actual
+let filteredSidebar: any[] = [];
+
+// Validar que sidebar existe
+const sidebar = Astro.props.sidebar || [];
+
+if (currentPath.includes('/guides-company/')) {
+  // Solo Chats para Company (sin Notificaciones)
+  filteredSidebar = [
+    {
+      type: 'group',
+      label: 'Chats',
+      entries: sidebar.flatMap((group: any) => 
+        group.label === 'Chats' && group.entries ? 
+        group.entries.filter((entry: any) => entry.href?.includes('/guides-company/')) : []
+      )
+    }
+  ].filter(group => group.entries.length > 0);
+} else if (currentPath.includes('/guides-jobseeker/')) {
+  // Solo Notificaciones para Jobseeker (sin Chats)
+  filteredSidebar = [
+    {
+      type: 'group',
+      label: 'Notificaciones',
+      entries: sidebar.flatMap((group: any) => 
+        group.label === 'Notificaciones' && group.entries ? 
+        group.entries.filter((entry: any) => entry.href?.includes('/guides-jobseeker/')) : []
+      )
+    }
+  ].filter(group => group.entries.length > 0);
+} else {
+  filteredSidebar = sidebar;
+}
+
+const filteredProps = { ...Astro.props, sidebar: filteredSidebar };
+---
+
+<Default {...filteredProps} />

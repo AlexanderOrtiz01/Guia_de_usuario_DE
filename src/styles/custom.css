@@ -1,13 +1,13 @@
-/* Estilo personalizado para el título DIRECT ENGLISH */
+/* Estilo personalizado para el título MAGNETOHR */
 h1[data-page-title] {
-  background: linear-gradient(90deg, #000000 0%, #000000 45%, #35ACE6 45%, #35ACE6 100%);
+  background: linear-gradient(90deg, #0D4269 0%, #0D4269 77%, #4D4D4D 77%, #4D4D4D 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .hero h1 {
-  background: linear-gradient(90deg, #000000 0%, #000000 45%, #35ACE6 45%, #35ACE6 100%);
+  background: linear-gradient(90deg, #0D4269 0%, #0D4269 77%, #4D4D4D 77%, #4D4D4D 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -15,7 +15,7 @@ h1[data-page-title] {
 
 /* Estilo para el título del header */
 .site-title span {
-  background: linear-gradient(90deg, #000000 0%, #000000 58%, #35ACE6 58%, #35ACE6 100%);
+  background: linear-gradient(90deg, #4D4D4D 0%, #4D4D4D 58%, #0D4269 58%, #0D4269 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
